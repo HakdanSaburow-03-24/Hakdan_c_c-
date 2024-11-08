@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+void opredelitMast(int mast) {
+    switch (mast) {
+        case 1:
+            cout << "Масть: Пики" << endl;
+            break;
+        case 2:
+            cout << "Масть: Трефы" << endl;
+            break;
+        case 3:
+            cout << "Масть: Бубны" << endl;
+            break;
+        case 4:
+            cout << "Масть: Червы" << endl;
+            break;
+        default:
+            cout << "Некорректный номер масти. Введите число от 1 до 4." << endl;
+            break;
+    }
+}
+
+int main() {
+    int mast;
+    cout << "Введите номер масти (1 - Пики, 2 - Трефы, 3 - Бубны, 4 - Червы): ";
+    cin >> mast;
+
+    opredelitMast(mast);
+
+    return 0;
+}

@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+const char *renkler[] = {"Yeşil", "Kırmızı", "Sarı", "Beyaz", "Siyah"};
+const char *hayvanlar[] = {"Fare", "Öküz", "Kaplan", "Tavşan", "Ejderha", "Yılan", "At", "Koyun", "Maymun", "Horoz", "Köpek", "Domuz"};
+
+void japonYilIsmi(int yil) {
+   
+    int baslangicYili = 1984;
+    
+   
+    int fark = yil - baslangicYili;
+
+    int donguPozisyonu = fark % 60;
+    if (donguPozisyonu < 0) donguPozisyonu += 60; // 1984'ten küçük yıllar için
+
+  
+    int renkIndeksi = (donguPozisyonu / 12) % 5;
+    int hayvanIndeksi = donguPozisyonu % 12;
+
+    printf("%d yılı - %s %s yılıdır.\n", yil, renkler[renkIndeksi], hayvanlar[hayvanIndeksi]);
+}
+
+int main() {
+    int yil;
+    printf("Bir yıl giriniz: ");
+    scanf("%d", &yil);
+
+    if (yil >= 1984) {
+        japonYilIsmi(yil);
+    } else {
+        printf("Yıl 1984 veya daha büyük olmalıdır.\n");
+    }
+
+    return 0;
+}

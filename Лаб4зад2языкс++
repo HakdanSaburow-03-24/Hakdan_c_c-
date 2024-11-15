@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+int main(){
+double a=-2,b=0,h=0.3;
+double x,y;    
+double min,max;
+cout << "baslangic(a):";
+cin >> a;
+cout << "son(b):";
+cin >> b;
+cout << "adim(h):";
+cin >> h;
+x=a;
+y=x*x+2*x-5; 
+min=y; 
+max=y; 
+while(x<=b){
+y=x*x+2*x-5; 
+if(y<min){
+min=y; 
+}
+if(y>max){
+max=y;
+}
+x+=h; 
+}
+cout << "En kucuk deger:" << min << endl;
+cout << "En buyuk deger:" << max << endl;
+return 0;
+}
